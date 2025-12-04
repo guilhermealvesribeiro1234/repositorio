@@ -14,24 +14,12 @@ import org.springframework.stereotype.Service;
  *
  * @author DIT2A
  */
-public interface AirportRepository  extends JpaRepository<Airport, Long> {
+public interface AirportRepository extends JpaRepository<Airport, Long> {
+
     List<Airport> findByCityIgnoreCase(String city);
 
-    public List<Airport> findByCountryIgnoreCase(String country);
+    List<Airport> findByCountryIgnoreCase(String country);
+
 
     public Airport findByIataCode(String iataCode);
-    @Service
-    public class AirportService {
-        
-        @Autowired
-        private AirportRepository airportRepository;
-        
-        public List<Airport> findAll() {
-            
-            List<Airport> result = airportRepository.findAll();
-            return result;
-            
-        }
-    }
-    
 }

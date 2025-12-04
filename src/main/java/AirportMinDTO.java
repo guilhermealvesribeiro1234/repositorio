@@ -10,9 +10,25 @@ import br.eti.kge.airports.entities.Airport;
  *
  * @author DIT2A
  */
-class AirportMinDTO {
 
-    AirportMinDTO(Airport x) {
-    }
+
     
-}
+    
+    public class AirportMinDTO {
+        
+        private long id;
+        private String name;
+        private String city;
+        private String iataCode;
+        
+        public AirportMinDTO() {
+        }
+        
+        public AirportMinDTO(Airport airport) {
+            this.id = airport.getId();
+            this.name = airport.getName();
+            this.city = airport.getCity();
+            this.iataCode = airport.getIataCode();
+        }
+    }
+
