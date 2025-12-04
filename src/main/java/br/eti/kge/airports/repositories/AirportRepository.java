@@ -5,6 +5,7 @@
 package br.eti.kge.airports.repositories;
 
 import br.eti.kge.airports.entities.Airport;
+import br.eti.kge.airports.projections.AirportNearMeProjection;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -22,4 +23,7 @@ public interface AirportRepository extends JpaRepository<Airport, Long> {
 
 
     public Airport findByIataCode(String iataCode);
+
+    public List<AirportNearMeProjection> findNearMe(double latitude, double longitude);
+    
 }
